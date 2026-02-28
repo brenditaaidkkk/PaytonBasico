@@ -1,11 +1,19 @@
-from enemigo import *
+from Enemigo import *
+import random
 
-class zombie(Enemigo):
-    def _init_(self,puntos_energia=10,ataque=1):
-        super()._init_(tipo_enemigo='zombie',puntos_energia=puntos_energia,ataque=ataque)
+class Zombie(Enemigo):
+    def __init__(self, puntos_energia=10, ataque=1):
+        super().__init__(tipo_enemigo="Zombie", puntos_energia=puntos_energia, ataque=ataque)
 
-        def habla(self):
-            print("*Hummmm........*")
+    def habla(self):
+        print("*Hummmm........*")
 
-            def propagar_enfermedad(self):
-                print("El zombie eata tratando de propagar la enfermedad!!")
+    def propagar_enfermedad(self):
+        print("El zombie eata tratando de propagar la enfermedad!!")
+
+    def ataque_especial(self):
+       print("zombie ataque especial")
+       funciona_ataque_especial = random.random() < 0.5
+       if funciona_ataque_especial:
+        self.ataque += 2
+        print('zombie ha regenerado su energia con 2HP!!!!')
